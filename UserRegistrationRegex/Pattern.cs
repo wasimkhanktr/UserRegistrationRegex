@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace UserRegistrationRegex
 {
-    internal class Pattern
+    public class Pattern
     {
         public string FirstName = "^[A-Z]{1}[a-z]{2,}$";
         public string LastName = "^[A-Z]{1}[a-z]{2,}$";
+        public string Email = " ^[A - Z0 - 9a - z]{1,}([.#$^_-][A-Za-z0-9]+)?[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
         public void validateFirstName(string firstName)
         {
             bool correct = Regex.IsMatch(firstName, FirstName);
@@ -27,5 +28,14 @@ namespace UserRegistrationRegex
             else
                 Console.WriteLine("LastName is not correct");
         }
+        public void validateEmail(string email)
+        {
+            bool correct = Regex.IsMatch(email, Email);
+            if (correct)
+                Console.WriteLine("Email is correct");
+            else
+                Console.WriteLine("Email is invilid");
+        }
+       
     }
 }
