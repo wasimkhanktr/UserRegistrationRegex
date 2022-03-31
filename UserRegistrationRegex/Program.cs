@@ -13,7 +13,12 @@ namespace UserRegistrationRegex
             Pattern pattern = new Pattern();
             Console.Write("Enter the FirstName : ");
             string firstName = Console.ReadLine();
-            pattern.validate(firstName);
+            Console.Write("Enter the LastName : ");
+
+            
+            string lastName = Console.ReadLine();
+            pattern.validateFirstName(firstName);
+            pattern.validateLastName(lastName);
         }
     }
 }
