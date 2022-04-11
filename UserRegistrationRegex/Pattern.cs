@@ -14,45 +14,45 @@ namespace UserRegistrationRegex
         public string Email = " ^[A - Z0 - 9a - z]{1,}([.#$^_-][A-Za-z0-9]+)?[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
         public string MobileNo = "^[0-9]{2}[ ]{1}[6-9]{1}[0-9]{9}$";
         public string Password = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{8,}$";
-        public void validateFirstName(string firstName)
+        public string validateFirstName(string firstName)
         {
             bool correct = Regex.IsMatch(firstName, FirstName);
             if (correct)
-                Console.WriteLine("FirstName is correct");
+                return "FirstName is Valid";
             else
-                Console.WriteLine("FirstName is not correct");
+                return "FirstName is not Valid";
         }
-        public void validateLastName(string lastName)
+        public string validateLastName(string lastName)
         {
             bool correct = Regex.IsMatch(lastName, LastName);
             if (correct)
-                Console.WriteLine("LastName is correct");
+                return "LastName is Valid";
             else
-                Console.WriteLine("LastName is not correct");
+                return "LastName is not Valid";
         }
-        public void validateMobileNo(string mobileNo)
-        {
-            bool correct = Regex.IsMatch(mobileNo, MobileNo);
-            if (correct)
-                Console.WriteLine("Mobile Number is correct");
-            else
-                Console.WriteLine("Mobile Number is not correct");
-        }
-        public void validateEmail(string email)
+        public string validateEmail(string email)
         {
             bool correct = Regex.IsMatch(email, Email);
             if (correct)
-                Console.WriteLine("Email is correct");
+                return "Email is Valid";
             else
-                Console.WriteLine("Email is not correct");
+                return "Email is not Valid";
         }
-        public void validatePassword(string password)
+        public string validateMobileNo(string mobileNo)
+        {
+            bool correct = Regex.IsMatch(mobileNo, MobileNo);
+            if (correct)
+                return "Mobile no is Valid";
+            else
+                return "Mobile no is not Valid";
+        }
+        public string validatePassword(string password)
         {
             bool correct = Regex.IsMatch(password, Password);
             if (correct)
-                Console.WriteLine("Password iscorrect");
+                return "Password is Valid";
             else
-                Console.WriteLine("Password is not correct");
+                return "Password is not Valid";
         }
     }
 }
