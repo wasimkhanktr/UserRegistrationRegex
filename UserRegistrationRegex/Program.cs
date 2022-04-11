@@ -11,20 +11,17 @@ namespace UserRegistrationRegex
         static void Main(string[] args)
         {
             Pattern pattern = new Pattern();
-            Console.Write("Enter the FirstName : ");
+            Console.WriteLine("Enter the FirstName");
             string firstName = Console.ReadLine();
-            Console.Write("Enter the LastName : ");
-            string lastName = Console.ReadLine();
-            Console.Write("Enter the MobileNo : ");
-            string mobileNo = Console.ReadLine();
-            Console.Write("Enter Your Email : ");
-            string email = Console.ReadLine();
-            Console.Write("Enter the Password : ");
-            string password = Console.ReadLine();
             pattern.validateFirstName(firstName);
+            Console.WriteLine("Enter the LastName");
+            string lastName = Console.ReadLine();
             pattern.validateLastName(lastName);
+            Console.WriteLine("Enter the MobileNo");
+            string mobileNo = Console.ReadLine();
             pattern.validateMobileNo(mobileNo);
-            pattern.validateEmail(email);
+            Console.WriteLine("Enter the Password");
+            string password = Console.ReadLine();
             pattern.validatePassword(password);
         }
     }
